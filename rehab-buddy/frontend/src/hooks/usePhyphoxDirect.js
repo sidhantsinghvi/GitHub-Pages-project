@@ -13,12 +13,12 @@ const REST_SAMPLES_NEEDED = 20   // ~0.3s at 60Hz to establish rest baseline
 const REP_START_DEVIATION = 1.5  // accY must move this far from rest to start rep
 const REP_END_DEVIATION   = 0.8  // accY must return this close to rest to end rep
 const CALIB_REPS_NEEDED   = 2
-const LIMIT_TOLERANCE     = 0.8  // noise buffer around calibrated limits
+const LIMIT_TOLERANCE     = 0.3  // noise buffer around calibrated limits
 const GLOBAL_MIN          = -13  // absolute hard bounds regardless of calibration
 const GLOBAL_MAX          = 13
 
 // ── Speed enforcement ────────────────────────────────────────────────────────
-const SPEED_THRESHOLD     = 80   // max |Δ accY| per second
+const SPEED_THRESHOLD     = 50   // max |Δ accY| per second
 
 // ── Lives ────────────────────────────────────────────────────────────────────
 const MAX_LIVES           = 3
