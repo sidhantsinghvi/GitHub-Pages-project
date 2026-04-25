@@ -6,7 +6,7 @@ const UP_START    = 0.30
 const TOP         = 0.72
 const TOP_HYST    = 0.12
 const DOWN_DONE   = 0.22
-const POLL_MS     = 16    // ~60 Hz
+const POLL_MS     = 0     // fire again immediately after each response
 
 // ── Calibration ──────────────────────────────────────────────────────────────
 const REST_SAMPLES_NEEDED = 20   // ~0.3s at 60Hz to establish rest baseline
@@ -298,7 +298,7 @@ export function usePhyphoxDirect(initialHost = '') {
 
     const url = `/phyphox/get?accX=full&accY=full&accZ=full`
     try {
-      const res = await fetch(url, { signal: AbortSignal.timeout(1400) })
+      const res = await fetch(url, { signal: AbortSignal.timeout(400) })
       if (!res.ok) throw new Error('http error')
       const json = await res.json()
 
