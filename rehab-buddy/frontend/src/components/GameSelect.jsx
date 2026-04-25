@@ -6,12 +6,12 @@ export default function GameSelect({ onSelect }) {
       <h1 className="gs-title">Choose Your Mode</h1>
       <p className="gs-sub">Your limits are set. Pick how you want to train.</p>
       <div className="gs-cards">
-        <button className="gs-card" onClick={() => onSelect('runner')}>
-          <div className="gs-icon">〰️</div>
-          <div className="gs-card-title">Corridor</div>
+        <button className="gs-card" onClick={() => onSelect('pong')}>
+          <div className="gs-icon">🏓</div>
+          <div className="gs-card-title">Pong</div>
           <div className="gs-card-desc">
-            Stay between the lines.<br />
-            Extend to go up, relax to go down.
+            Control your paddle with your arm.<br />
+            First to 7 beats the CPU!
           </div>
         </button>
         <button className="gs-card" onClick={() => onSelect('archery')}>

@@ -3,7 +3,7 @@ import { usePhyphoxDirect } from './hooks/usePhyphoxDirect'
 import Setup from './components/Setup'
 import CalibrationScreen from './components/CalibrationScreen'
 import GameSelect from './components/GameSelect'
-import RunnerGame from './components/RunnerGame'
+import PongGame from './components/PongGame'
 import ArcheryGame from './components/ArcheryGame'
 import CurlGame from './components/CurlGame'
 import SessionSummary from './components/SessionSummary'
@@ -60,8 +60,8 @@ export default function App() {
   if (screen === 'select')  return <GameSelect onSelect={setScreen} />
   if (screen === 'summary') return <SessionSummary data={finalData} onRestart={handleRestart} />
 
-  if (screen === 'runner') return (
-    <RunnerGame data={data} lives={lives} violation={violation} onFinish={handleFinish} send={send} />
+  if (screen === 'pong') return (
+    <PongGame data={data} lives={lives} violation={violation} onFinish={handleFinish} />
   )
   if (screen === 'archery') return (
     <ArcheryGame data={data} lives={lives} violation={violation} onFinish={handleFinish} />
