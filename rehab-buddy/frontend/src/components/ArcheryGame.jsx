@@ -10,8 +10,8 @@ const RING_COUNT = 4
 const STABILITY_FRAMES = 55   // ~0.9s at 60Hz to auto-fire
 const STABILITY_WINDOW = 0.08 // smoothed_progress must stay within ±this to count stable
 const ARROW_SPEED = 14
-const TARGET_SPEED_BASE = 1.0
-const TARGET_SPEED_MAX = 2.8
+const TARGET_SPEED_BASE = 0.5
+const TARGET_SPEED_MAX = 1.6
 const MAX_ARROWS = 10
 
 function ringScore(frac) {
