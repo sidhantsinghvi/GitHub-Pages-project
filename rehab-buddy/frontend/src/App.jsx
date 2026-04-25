@@ -5,6 +5,7 @@ import ExerciseSelect from './components/ExerciseSelect'
 import CalibrationScreen from './components/CalibrationScreen'
 import GameSelect from './components/GameSelect'
 import BasketballGame from './components/BasketballGame'
+import RunnerGame from './components/RunnerGame'
 import PongGame from './components/PongGame'
 import ArcheryGame from './components/ArcheryGame'
 import CurlGame from './components/CurlGame'
@@ -74,6 +75,9 @@ export default function App() {
   if (screen === 'select') return <GameSelect onSelect={setScreen} exercise={exercise} />
   if (screen === 'summary') return <SessionSummary data={finalData} onRestart={handleRestart} />
 
+  if (screen === 'runner') return (
+    <RunnerGame data={data} lives={lives} violation={violation} onFinish={handleFinish} send={send} />
+  )
   if (screen === 'basketball') return (
     <BasketballGame data={data} repFlash={repFlash} lives={lives} violation={violation} onFinish={handleFinish} send={send} />
   )

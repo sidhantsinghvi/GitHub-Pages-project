@@ -3,6 +3,12 @@ import './GameSelect.css'
 const GAMES = {
   bicep: [
     {
+      id: 'runner',
+      icon: '〰️',
+      title: 'Corridor',
+      desc: <>Stay between the lines.<br />Curl to go up, relax to go down.</>,
+    },
+    {
       id: 'basketball',
       icon: '🏀',
       title: 'Basketball',
