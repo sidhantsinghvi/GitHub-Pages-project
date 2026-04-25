@@ -62,7 +62,7 @@ export default function CurlGame({ data, repFlash, config = {}, send, onFinish, 
           <span className="stat-label">Time</span>
           <span className="stat-value mono">{formatTime(data.session_time)}</span>
         </div>
-        <div className="exercise-tag">Bicep Curl</div>
+        <div className="exercise-tag">Tricep Extension</div>
         <div className="stat-chip">
           <span className="stat-label">Lives</span>
           <span className="stat-value mono">{['❤️','❤️','❤️'].map((h,i) => i < lives ? '❤️' : '🖤').join('')}</span>
