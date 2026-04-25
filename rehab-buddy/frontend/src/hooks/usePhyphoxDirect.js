@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 
 // ── Game signal processing ───────────────────────────────────────────────────
-const EMA_ALPHA   = 0.82   // higher = less smoothing lag
+const EMA_ALPHA   = 0.95   // higher = less smoothing lag
 const UP_START    = 0.30
 const TOP         = 0.72
 const TOP_HYST    = 0.12
