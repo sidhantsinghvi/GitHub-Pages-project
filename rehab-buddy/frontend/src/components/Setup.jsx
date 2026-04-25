@@ -14,7 +14,7 @@ export default function Setup({ onStart }) {
       <div className="setup-card">
         <div className="setup-logo">💪</div>
         <h1 className="setup-title">RehabBuddy</h1>
-        <p className="setup-subtitle">Tricep extension trainer · powered by phyphox</p>
+        <p className="setup-subtitle">Rehab trainer · powered by phyphox</p>
 
         {step === 'config' && (
           <>

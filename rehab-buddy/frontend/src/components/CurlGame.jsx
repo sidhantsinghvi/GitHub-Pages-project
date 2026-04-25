@@ -15,7 +15,7 @@ function formatTime(secs) {
   return `${m}:${String(s).padStart(2, '0')}`
 }
 
-export default function CurlGame({ data, repFlash, config = {}, send, onFinish, lives = 3, violation = null }) {
+export default function CurlGame({ data, repFlash, config = {}, send, onFinish, lives = 3, violation = null, exercise = 'bicep' }) {
   const [flashVisible, setFlashVisible] = useState(false)
   const [flashLabel, setFlashLabel] = useState(null)
   const [editingHost, setEditingHost] = useState(false)
@@ -62,7 +62,7 @@ export default function CurlGame({ data, repFlash, config = {}, send, onFinish, 
           <span className="stat-label">Time</span>
           <span className="stat-value mono">{formatTime(data.session_time)}</span>
         </div>
-        <div className="exercise-tag">Tricep Extension</div>
+        <div className="exercise-tag">{exercise === 'tricep' ? 'Tricep Extension' : 'Bicep Curl'}</div>
         <div className="stat-chip">
           <span className="stat-label">Lives</span>
           <span className="stat-value mono">{['❤️','❤️','❤️'].map((h,i) => i < lives ? '❤️' : '🖤').join('')}</span>

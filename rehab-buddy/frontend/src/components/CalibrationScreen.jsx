@@ -1,6 +1,6 @@
 import './CalibrationScreen.css'
 
-export default function CalibrationScreen({ calibReps, calibStatus, calibAccY, limits, onDone, onSkip }) {
+export default function CalibrationScreen({ calibReps, calibStatus, calibAccY, limits, onDone, onSkip, exercise = 'bicep' }) {
   const pct = Math.round(((calibAccY + 13) / 26) * 100)
   const barPct = Math.max(2, Math.min(98, pct))
 
@@ -10,7 +10,7 @@ export default function CalibrationScreen({ calibReps, calibStatus, calibAccY, l
         <div className="calib-logo">🦾</div>
         <h1 className="calib-title">Set Your Limits</h1>
         <p className="calib-subtitle">
-          Do <strong>2 slow, comfortable curls</strong> at your full safe range.<br />
+          Do <strong>2 slow, comfortable {exercise === 'tricep' ? 'extensions' : 'curls'}</strong> at your full safe range.<br />
           This sets the boundaries the game will enforce.
         </p>
 
