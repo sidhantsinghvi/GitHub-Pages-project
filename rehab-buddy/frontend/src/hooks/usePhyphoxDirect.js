@@ -388,9 +388,19 @@ export function usePhyphoxDirect(initialHost = '') {
     setGamePhase('calibrating')
   }, [])
 
+  const skipCalibration = useCallback(() => {
+    const s = sp.current
+    s.limits = { min: GLOBAL_MIN, max: GLOBAL_MAX }
+    s.curlRestValue = GLOBAL_MIN
+    s.curlTopValue = GLOBAL_MAX
+    setLimits(s.limits)
+    setCalibReps(2)
+    setCalibStatus('done')
+  }, [])
+
   return {
     data, repFlash, host, setHost, reset,
-    gamePhase, startGame, resetCalibration,
+    gamePhase, startGame, resetCalibration, skipCalibration,
     calibReps, calibStatus, calibAccY, limits,
     lives, violation,
   }

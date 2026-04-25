@@ -14,7 +14,7 @@ export default function App() {
 
   const {
     data, repFlash, host, setHost, reset,
-    gamePhase, startGame, resetCalibration,
+    gamePhase, startGame, resetCalibration, skipCalibration,
     calibReps, calibStatus, calibAccY, limits,
     lives, violation,
   } = usePhyphoxDirect('')
@@ -54,6 +54,7 @@ export default function App() {
       calibAccY={calibAccY}
       limits={limits}
       onDone={handleCalibrationDone}
+      onSkip={() => { skipCalibration(); handleCalibrationDone() }}
     />
   )
   if (screen === 'select')  return <GameSelect onSelect={setScreen} />

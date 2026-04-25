@@ -1,6 +1,6 @@
 import './CalibrationScreen.css'
 
-export default function CalibrationScreen({ calibReps, calibStatus, calibAccY, limits, onDone }) {
+export default function CalibrationScreen({ calibReps, calibStatus, calibAccY, limits, onDone, onSkip }) {
   const pct = Math.round(((calibAccY + 13) / 26) * 100)
   const barPct = Math.max(2, Math.min(98, pct))
 
@@ -60,6 +60,10 @@ export default function CalibrationScreen({ calibReps, calibStatus, calibAccY, l
           onClick={onDone}
         >
           {calibStatus === 'done' ? 'Start Session →' : `${calibReps}/2 reps…`}
+        </button>
+
+        <button className="calib-skip" onClick={onSkip}>
+          Skip — use full range (±13 m/s²)
         </button>
       </div>
     </div>
