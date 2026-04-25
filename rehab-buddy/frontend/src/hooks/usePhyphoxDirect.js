@@ -2,10 +2,10 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 
 // ── Game signal processing ───────────────────────────────────────────────────
 const EMA_ALPHA   = 0.95   // higher = less smoothing lag
-const UP_START    = 0.30
-const TOP         = 0.72
-const TOP_HYST    = 0.12
-const DOWN_DONE   = 0.22
+const UP_START    = 0.25
+const TOP         = 0.62
+const TOP_HYST    = 0.10
+const DOWN_DONE   = 0.28
 const POLL_MS     = 0     // fire again immediately after each response
 
 // ── Calibration ──────────────────────────────────────────────────────────────
@@ -390,9 +390,12 @@ export function usePhyphoxDirect(initialHost = '') {
 
   const skipCalibration = useCallback(() => {
     const s = sp.current
+    const restVal = s.prevAccY ?? 0
+    const distToMin = Math.abs(GLOBAL_MIN - restVal)
+    const distToMax = Math.abs(GLOBAL_MAX - restVal)
+    s.curlRestValue = restVal
+    s.curlTopValue = distToMin > distToMax ? GLOBAL_MIN : GLOBAL_MAX
     s.limits = { min: GLOBAL_MIN, max: GLOBAL_MAX }
-    s.curlRestValue = GLOBAL_MIN
-    s.curlTopValue = GLOBAL_MAX
     setLimits(s.limits)
     setCalibReps(2)
     setCalibStatus('done')
