@@ -56,15 +56,12 @@ export default function ArcheryGame({ data, lives: calibLives, violation, onFini
       hitFlash: 0,         // frames to show hit score
       hitScore: 0,
       hitY: 0,
-      localSmoothed: 0.5,
       recentProgress: [],  // ring buffer for stability detection
     }
 
     function getAimY() {
-      const target = Math.max(0, Math.min(1, dataRef.current.smoothed_progress))
-      g.localSmoothed += 0.88 * (target - g.localSmoothed)
-      // progress=1 → top of canvas, progress=0 → bottom
-      return H * 0.85 - g.localSmoothed * H * 0.70
+      const sp = Math.max(0, Math.min(1, dataRef.current.smoothed_progress))
+      return H * 0.85 - sp * H * 0.70
     }
 
     function fireArrow(fromY) {
