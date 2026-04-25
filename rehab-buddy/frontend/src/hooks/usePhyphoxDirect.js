@@ -18,7 +18,7 @@ const GLOBAL_MIN          = -13  // absolute hard bounds regardless of calibrati
 const GLOBAL_MAX          = 13
 
 // ── Speed enforcement ────────────────────────────────────────────────────────
-const SPEED_THRESHOLD     = 30   // max |Δ accY| per second
+const SPEED_THRESHOLD     = 80   // max |Δ accY| per second
 
 // ── Lives ────────────────────────────────────────────────────────────────────
 const MAX_LIVES           = 3
