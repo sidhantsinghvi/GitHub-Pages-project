@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(curl -s --max-time 3 \"http://100.83.33.56:8080/get?accX=full&accY=full&accZ=full&acc_time=full\")",
+      "Bash(curl -v --max-time 3 \"http://100.83.33.56:8080\")",
+      "Bash(curl -v --max-time 3 \"http://172.20.10.1:8080\")",
+      "Bash(curl -s --max-time 1 -o /dev/null -w '%{http_code}' http://172.20.10.1:__TRACKED_VAR__)",
+      "Bash(curl -s --max-time 4 \"http://100.83.33.56:8080/get?accX=full&accY=full&accZ=full&acc_time=full\")",
+      "Bash(curl -s --max-time 10 \"http://100.83.33.56:8080/get?accX=full&accY=full&accZ=full&acc_time=full\")",
+      "Bash(curl -s --max-time 10 \"http://100.83.33.56:8080/config\")",
+      "Bash(curl -v --max-time 5 \"http://100.83.33.56:80\")",
+      "Bash(curl -s --max-time 5 \"http://100.83.33.56/get?accX=full&accY=full&accZ=full&acc_time=full\")",
+      "Bash(git rm *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(gh repo *)",
+      "Bash(lsof -i:8000)",
+      "Bash(curl -s --max-time 3 \"http://172.20.10.1/get?accX=full&accY=full&accZ=full&acc_time=full\")",
+      "Bash(curl -s http://localhost:8000/health)",
+      "Bash(curl -s \"http://localhost:8000/debug/phyphox\")",
+      "Bash(curl -s --max-time 5 http://localhost:8000/health)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(list\\(d.keys\\(\\)\\)\\); print\\(list\\(d.get\\('buffer',d\\).keys\\(\\)\\)\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('status:', d.get\\('status'\\)\\); buf=d.get\\('buffer',{}\\); print\\('accZ sample:', buf.get\\('accZ',{}\\).get\\('buffer',[]\\)[-1]\\)\")",
+      "Bash(.venv/bin/pip install *)",
+      "Bash(.venv/bin/pip show *)"
+    ]
+  }
+}

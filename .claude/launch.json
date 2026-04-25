@@ -18,6 +18,13 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 5173
+    },
+    {
+      "name": "rehab-buddy",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "cwd": "rehab-buddy/frontend",
+      "port": 5173
     }
   ]
 }
